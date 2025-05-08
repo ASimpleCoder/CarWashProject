@@ -1,7 +1,2 @@
 streamlit
 smtplib
-python-dotenv
-
-git add requirements.txt
-git commit -m "Add python-dotenv to requirements.txt"
-git push origin main
