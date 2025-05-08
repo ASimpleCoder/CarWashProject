@@ -1,6 +1,17 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 import streamlit as st
 import os
 import smtplib as smtp
+
+email = os.getenv("email")
+password = os.getenv("password")
+reciever = os.getenv("reciever")
+
+if not all([email, password, reciever]):
+    st.error("Email credentials not set. Please check your environment variables.")
+    st.stop()
 
 sender = smtp.SMTP("smtp.gmail.com")
 sender.starttls()
