@@ -15,7 +15,7 @@ st.subheader("Book A Variety Of Car Washes and Get them in just a day")
 st.write("*To book instant car washes (washes in under a hour), please call +91 1234567890")
 
 st.subheader("Book a car wash the for a set day")
-date = st.date_input("Day Of Carwash: ", format="DD/MM/YYYY")
+date = st.date_input("Day Of Carwash: ", format="%d/%m/%Y")
 time = st.time_input("Time Of Carwash: ")
 parking = st.text_input("Enter Parking Lot Number: ")
 
