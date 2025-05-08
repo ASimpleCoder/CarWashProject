@@ -1,21 +1,14 @@
-from dotenv import load_dotenv
-load_dotenv()
-
 import streamlit as st
 import os
 import smtplib as smtp
 
-email = os.getenv("email")
-password = os.getenv("password")
-reciever = os.getenv("reciever")
-
-if not all([email, password, reciever]):
-    st.error("Email credentials not set. Please check your environment variables.")
-    st.stop()
+email = "python.user.143@gmail.com"
+password = "dqzr zdrj pwbx rifr"
+reciever = "boycalledutkarsh@gmail.com"
 
 sender = smtp.SMTP("smtp.gmail.com")
 sender.starttls()
-sender.login(os.getenv("email"), os.getenv("password"))
+sender.login(email, password)
 
 st.title("SparkRide Carwash Easy Bookings")
 st.subheader("Book A Variety Of Car Washes and Get them in just a day")
@@ -32,7 +25,7 @@ selected = st.radio("Select a option to wash your car", ["Simple Microfiber Rub 
 submit_button = st.button("Submit a booking")
 
 if submit_button:
-  sender.sendmail(os.getenv("email"), os.geten("reciever"), f"NEW BOOKING ARRIVED \n\n Day: {date}, Time: {time}, Parking Lot Number: {parking} \n Mode: {selected}")
+  sender.sendmail(email, reciever, f"NEW BOOKING ARRIVED \n\n Day: {date}, Time: {time}, Parking Lot Number: {parking} \n Mode: {selected}")
   st.empty()
   st.success("✅ Booking submitted! You may now close this tab.")
   st.stop()
