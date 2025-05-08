@@ -25,7 +25,9 @@ selected = st.radio("Select a option to wash your car", ["Simple Microfiber Rub 
 submit_button = st.button("Submit a booking")
 
 if submit_button:
-  sender.sendmail(email, reciever, f"NEW BOOKING ARRIVED \n\n Day: {date}, Time: {time}, Parking Lot Number: {parking} \n Mode: {selected}")
+  message = f"NEW BOOKING ARRIVED \n\n Day: {date}, Time: {time}, Parking Lot Number: {parking} \n Mode: {selected}"
+  sender.sendmail(email, reciever, message.encode('utf-8'))
+  
   st.empty()
   st.success("✅ Booking submitted! You may now close this tab.")
   st.stop()
