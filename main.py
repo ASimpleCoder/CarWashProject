@@ -1,6 +1,6 @@
 email = "python.user.143@gmail.com"
 password = "dqzr zdrj pwbx rifr"
-reciever = "boycalledutkarsh@gmail.com"
+receiver = "boycalledutkarsh@gmail.com"
 
 import streamlit as st
 import smtplib as smtp
