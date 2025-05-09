@@ -6,7 +6,8 @@ email = "python.user.143@gmail.com"
 password = "dqzr zdrj pwbx rifr"
 reciever = "boycalledutkarsh@gmail.com"
 
-sender = smtp.SMTP("smtp.gmail.com")
+sender = smtp.SMTP("smtp.gmail.com", 587)
+sender.ehlo()
 sender.starttls()
 sender.login(email, password)
 
